@@ -1,0 +1,4 @@
+.cache/
+.tox/
+lcms.egg-info/
+__pycache__
