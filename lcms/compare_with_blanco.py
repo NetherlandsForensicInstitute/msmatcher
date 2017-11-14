@@ -5,14 +5,18 @@ from lcms.utils import load_df_per_exp
 
 def get_df_mean_intensity_nlargest(df_b, df_a, n=1):
     '''
-    maakt een dataframe met voor iedere stof de hoogste (n=1), of de som van de n hoogste (n>1), intensiteitswaardes per stof (formula) voor zowel stof a als stof b.
-    vergelijkt hoeveel keer hoger (of lager) de intensiteit van dezelfde stof is ina als in b de target als in de b substantie
+    maakt een dataframe met voor iedere stof de hoogste (n=1), of de som van de n hoogste (n>1),
+    intensiteitswaardes per stof (formula) voor zowel stof a als stof b.
+    vergelijkt hoeveel keer hoger (of lager) de intensiteit van dezelfde stof is ina als in b de
+    target als in de b substantie
 
 
     :param df_a: data met de waardes van sample a uit de db
     :param df_b: data met de waardes van sample b uit de db
-    :param n: als n == 1, wordt van iedere stof de hoogste intensiteit genomen. Als n > 1, dan wordt het gemiddelde van de n hoogste waardes genomen
-    :return: df met de hoogste (of het gemiddelde van) intensiteit per stof voor zowel sample a als sample b, en het relatieve verschil tussen deze waardes.
+    :param n: als n == 1, wordt van iedere stof de hoogste intensiteit genomen. Als n > 1, dan
+              wordt het gemiddelde van de n hoogste waardes genomen
+    :return: df met de hoogste (of het gemiddelde van) intensiteit per stof voor zowel sample
+             a als sample b, en het relatieve verschil tussen deze waardes.
     '''
 
     if n == 1:

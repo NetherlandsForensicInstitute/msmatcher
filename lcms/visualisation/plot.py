@@ -23,7 +23,7 @@ def peak_list_to_matrix(data, rt_bins=75, mz_bins=75):
 
     # NOTE matrix has to be transposed for plotly's surface plot
     return matrix.T, rt_bin_edges[:-1], get_bin_size(rt_bin_edges), \
-           mz_bin_edges[:-1], get_bin_size(mz_bin_edges)
+        mz_bin_edges[:-1], get_bin_size(mz_bin_edges)
 
 
 def get_bin_size(rt_bin_edges):
