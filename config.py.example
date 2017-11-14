@@ -1,0 +1,34 @@
+from sqlalchemy import create_engine
+import os
+
+########################
+# Database credentials #
+########################
+
+host = "<HOSTNAME>"
+database = "massa"
+username = "massa"
+password = "" # ask!
+
+
+################################################
+#             Data directories                 #
+# Only fill in if you need to parse LCMS files #
+################################################
+
+data_dir = '/path/to/data/'
+data_path = os.path.join(data_dir, 'Geconverteerd/')
+
+# Path for temp results (fill in <USERNAME>)
+output_path = '/home/<USERNAME>/PycharmProjects/lcms/plots'
+
+
+def create_connection():
+    """
+        creates a sql alchemy base db connection
+    :return: db connection
+    """
+    return create_engine('postgresql+psycopg2://{}:{}@{}/{}'.format(username, password, host, database))
+
+
+db_connection = create_connection()

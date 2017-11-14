@@ -1,3 +1,13 @@
-pymzml
+requests
 Cython
+pymzml>2.0.0
 matplotlib
+plotly
+pandas
+sqlalchemy
+psycopg2
+scipy
+numpy
+flask
+flask-cors
+xlrd

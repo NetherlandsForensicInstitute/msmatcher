@@ -1,4 +1,13 @@
 .cache/
 .tox/
+.idea/
+plots/
 lcms.egg-info/
 __pycache__
+config.py
+/.env
+.env
+.ipynb_checkpoints/
+data/
+experiment01.ipynb
+.py[cod]
