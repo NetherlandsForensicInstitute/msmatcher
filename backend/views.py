@@ -12,6 +12,3 @@ def catch_all(path=''):
         :return:
     """
     return render_template('index.html')
-
-
-

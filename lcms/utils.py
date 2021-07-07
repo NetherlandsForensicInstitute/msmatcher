@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sqlalchemy import MetaData, Table, Column
 
 import config
@@ -164,11 +165,11 @@ def load_peaks_for_mz(experiment_id, min_value, max_value):
             left JOIN "Peak" peak ON spec.spectrum_id = peak.spectrum_id AND spec.experiment_id = peak.experiment_id
             left JOIN "TrivialPeakMatch" tpm on tpm.matched_mass = peak.mz and tpm.spectrum_id = spec.spectrum_id and exp.experiment_id = tpm.experiment_id
             left JOIN "ChemicalName" cn ON cn.formula = tpm.formula
-        where 
+        where
             exp.experiment_id = {0}
-            and round(peak.mz::numeric,3) >= {1} 
+            and round(peak.mz::numeric,3) >= {1}
             and round(peak.mz::numeric,3) < {2}
-    
+
         group by
             spec.time_passed_since_start '''.format(experiment_id, min_value, max_value)
 
@@ -197,12 +198,12 @@ def load_peaks_for_rt(experiment_id, min_value, max_value):
             left JOIN "Peak" peak ON spec.spectrum_id = peak.spectrum_id AND spec.experiment_id = peak.experiment_id
             left JOIN "TrivialPeakMatch" tpm on tpm.matched_mass = peak.mz and tpm.spectrum_id = spec.spectrum_id and exp.experiment_id = tpm.experiment_id
             left JOIN "ChemicalName" cn ON cn.formula = tpm.formula
-        where 
-            exp.experiment_id = {0} 
+        where
+            exp.experiment_id = {0}
             and spec.time_passed_since_start >= {1}
-            and spec.time_passed_since_start < {2} 
+            and spec.time_passed_since_start < {2}
             and not peak.mz is null
-        group by 
+        group by
             round(peak.mz::numeric,3) '''.format(experiment_id, min_value, max_value)
 
     return load_query(query)

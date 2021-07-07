@@ -54,7 +54,7 @@ columns = [{'name': 'id', 'type_': types.Integer, 'primary_key': True, 'index': 
 initialize_table(table_name, columns)
 
 table_name = 'Spectrum'
-columns = [{'name': 'experiment_id', 'type_': types.Integer,  'index': True},
+columns = [{'name': 'experiment_id', 'type_': types.Integer, 'index': True},
            {'name': 'spectrum_id', 'type_': types.Integer, 'primary_key': True, 'index': True},
            {'name': 'total_ion_current', 'type_': DOUBLE_PRECISION},
            {'name': 'time_passed_since_start', 'type_': DOUBLE_PRECISION},
@@ -92,7 +92,7 @@ initialize_table(table_name, columns)
 
 table_name = 'Peak'
 columns = [{'name': 'experiment_id', 'type_': types.Integer, 'index': True},
-           {'name': 'spectrum_id', 'type_': types.Integer,  'index': True},
+           {'name': 'spectrum_id', 'type_': types.Integer, 'index': True},
            {'name': 'mz', 'type_': DOUBLE_PRECISION},
            {'name': 'intensity', 'type_': DOUBLE_PRECISION}]
 initialize_table(table_name, columns)
@@ -109,7 +109,7 @@ initialize_table(table_name, columns)
 
 table_name = 'Isomer'
 columns = [
-    {'name': 'formula', 'type_': types.VARCHAR(length=255),  'index': True},
+    {'name': 'formula', 'type_': types.VARCHAR(length=255), 'index': True},
     {'name': 'id', 'type_': types.Integer, 'primary_key': True, 'index': True,
      'autoincrement': True},
     {'name': 'retention_time', 'type_': DOUBLE_PRECISION},

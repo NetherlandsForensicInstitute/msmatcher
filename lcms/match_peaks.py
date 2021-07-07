@@ -1,5 +1,5 @@
 """
-Look through the spectra, and match the peaks in those spectra to the peaks in the reference list. 
+Look through the spectra, and match the peaks in those spectra to the peaks in the reference list.
 """
 import config
 

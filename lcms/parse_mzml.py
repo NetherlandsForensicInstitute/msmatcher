@@ -60,7 +60,7 @@ def create_spectrum_and_peak_tables(msrun_list, experiment_id):
             check_peak = config.db_connection.execute(
                 """SELECT experiment_id from "Peak"
                    WHERE experiment_id = '{}'
-                         AND spectrum_id = '{}'"""\
+                         AND spectrum_id = '{}'"""
                 .format(experiment_id, spc.ID)).fetchone()
             if check_peak is not None:
                 print(

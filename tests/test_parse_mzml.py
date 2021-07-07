@@ -1,5 +1,4 @@
 import pymzml
-import datetime
 from lcms import parse_mzml
 from hamcrest import assert_that, equal_to, not_none
 

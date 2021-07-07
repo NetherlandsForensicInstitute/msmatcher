@@ -40,7 +40,7 @@ for index, row in label.iterrows():
     formula, name = row['formula'], row['name']
     try:
         id_match = isomer_table[isomer_table['formula'] == formula].iloc[0]['id']
-    except:
+    except KeyError:
         raise ValueError("Formula name '{}' does not exist in Isomer table".format(formula))
     isomer_table = isomer_table[isomer_table.id != id_match]
     label.at[index, 'isomer_id'] = id_match
